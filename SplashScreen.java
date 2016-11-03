@@ -10,6 +10,7 @@ public class SplashScreen extends JWindow
      */
     private static final long serialVersionUID = 1592663893301307318L;
 
+    private BufferedImage img;
     /**
      * Constructeur par initialisation
      * @param p_Frame Frame
@@ -17,12 +18,14 @@ public class SplashScreen extends JWindow
      */
     public SplashScreen()
     {
-        BufferedImage img = null;
+        img = null;
         try {
             img = ImageIO.read(this.getClass().getResource("splash.png"));
         } catch (Exception ex) {
         }
+    }
 
+    public SplashScreen initialize() {
         ImgPanel panel = new ImgPanel(img);
         Container container = this.getContentPane();
         container.add(panel);
@@ -32,6 +35,7 @@ public class SplashScreen extends JWindow
         this.setLocation(screenSize.width/2 - (img.getWidth()/2), screenSize.height/2 - (img.getHeight()/2));
 
         this.setVisible(true);
+        return this;
     }
 
 

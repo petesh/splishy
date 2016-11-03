@@ -4,7 +4,7 @@ public class Main {
 
 public static void main(String[] args)
 {
-    SplashScreen splSplashScreen = new SplashScreen();
+    SplashScreen splSplashScreen = new SplashScreen().initialize();
     //Main window
     FenetrePrincipale fenetrePrincipale = new FenetrePrincipale();
     worker w = new worker(splSplashScreen, fenetrePrincipale);
@@ -15,8 +15,8 @@ public static void main(String[] args)
 
 class worker extends SwingWorker<String, Object> {
     private final static long TEMP_AFFICHAGE = 4000;
-    private SplashScreen splash;
-    private FenetrePrincipale principale;
+    private final SplashScreen splash;
+    private final FenetrePrincipale principale;
 
     public worker(SplashScreen splash, FenetrePrincipale principale) {
         this.splash = splash;
