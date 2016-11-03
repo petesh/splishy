@@ -42,10 +42,12 @@ public class SplashScreen extends JWindow
             this.img = img;
         }
 
+        @Override
         public Dimension getPreferredSize() {
             return new Dimension(img.getWidth(), img.getHeight());
         }
 
+        @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.drawImage(img, 0, 0, null);
